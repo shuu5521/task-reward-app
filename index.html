@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Reward App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">Task Reward App</p>
+          <h1>今日のタスクでごほうびを獲得しよう</h1>
+          <p class="app__subtitle">
+            タスクを完了するとポイントが貯まり、ストリークも記録されます。
+          </p>
+        </div>
+        <div class="scoreboard">
+          <div>
+            <span class="scoreboard__label">ポイント</span>
+            <span id="points" class="scoreboard__value">0</span>
+          </div>
+          <div>
+            <span class="scoreboard__label">ストリーク</span>
+            <span id="streak" class="scoreboard__value">0</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="card">
+          <h2>新しいタスク</h2>
+          <form id="task-form" class="task-form">
+            <label>
+              タスク名
+              <input id="task-title" type="text" placeholder="例: 30分の勉強" required />
+            </label>
+            <label>
+              報酬ポイント
+              <input
+                id="task-reward"
+                type="number"
+                min="1"
+                max="100"
+                value="10"
+                required
+              />
+            </label>
+            <button type="submit">追加する</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <div class="card__header">
+            <h2>今日のタスク</h2>
+            <button id="clear-completed" class="ghost">完了したタスクを削除</button>
+          </div>
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        </section>
+
+        <section class="card reward-card">
+          <h2>ごほうびメモ</h2>
+          <p>
+            ポイントが20pt貯まったらコーヒーブレイク、50pt貯まったらお気に入りのドラマを1話視聴…
+            など、自分にごほうびを設定してみましょう。
+          </p>
+          <div class="reward-grid">
+            <div class="reward">
+              <span>20pt</span>
+              <p>コーヒーブレイク</p>
+            </div>
+            <div class="reward">
+              <span>50pt</span>
+              <p>ドラマ1話</p>
+            </div>
+            <div class="reward">
+              <span>80pt</span>
+              <p>好きなスイーツ</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="task-item-template">
+      <li class="task-item">
+        <label class="task-item__check">
+          <input type="checkbox" />
+          <span class="task-item__title"></span>
+        </label>
+        <span class="task-item__reward"></span>
+        <button class="ghost">削除</button>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
