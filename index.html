@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>タスク管理 & ごほうびアプリ</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>タスク管理 & ごほうびアプリ</h1>
+        <p class="subtitle">タスクを完了してポイントをためよう！</p>
+      </header>
+
+      <section class="card">
+        <h2>ポイント</h2>
+        <p class="points"><span id="points">0</span> pt</p>
+      </section>
+
+      <section class="card">
+        <h2>タスクを追加</h2>
+        <form id="task-form" class="task-form">
+          <input id="task-title" type="text" placeholder="タスク名（例: 30分勉強）" required />
+          <input id="task-reward" type="number" min="1" step="1" value="10" required />
+          <button type="submit">追加</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>タスク一覧</h2>
+        <ul id="task-list" class="task-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>ごほうび</h2>
+        <form id="reward-form" class="reward-form">
+          <input id="reward-title" type="text" placeholder="ごほうび名（例: アイスを食べる）" required />
+          <input id="reward-cost" type="number" min="1" step="1" value="30" required />
+          <button type="submit">追加</button>
+        </form>
+        <ul id="reward-list" class="reward-list"></ul>
+      </section>
+    </main>
+
+    <template id="task-item-template">
+      <li class="item">
+        <div>
+          <p class="item-title"></p>
+          <p class="item-meta"></p>
+        </div>
+        <div class="item-actions">
+          <button class="complete-btn">完了</button>
+          <button class="delete-btn secondary">削除</button>
+        </div>
+      </li>
+    </template>
+
+    <template id="reward-item-template">
+      <li class="item">
+        <div>
+          <p class="item-title"></p>
+          <p class="item-meta"></p>
+        </div>
+        <div class="item-actions">
+          <button class="redeem-btn">交換</button>
+          <button class="delete-btn secondary">削除</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
