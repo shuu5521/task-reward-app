@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f8fc;
+  color: #1f2230;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: grid;
+  gap: 16px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: #5f6370;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e8eaf2;
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(21, 26, 38, 0.05);
+}
+
+.points {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 120px auto;
+  gap: 8px;
+}
+
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid #ccd3e5;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: #4a67ff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+button.secondary {
+  background: #e6e9f5;
+  color: #2f3550;
+}
+
+.task-list,
+.reward-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e3e7f3;
+  border-radius: 10px;
+  padding: 10px 12px;
+  gap: 12px;
+}
+
+.item-title {
+  font-weight: 600;
+}
+
+.item-meta {
+  color: #5f6370;
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+.item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.empty {
+  color: #5f6370;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
